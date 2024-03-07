@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+    <main>
+        
+        <!-- sidebar -->
+        <aside class="left">
+            <ul>
+                <li>
+                    <span>
+                        <input type="checkbox" name="long_reads" id="long-reads-label"> 
+                        <label for="long-reads-label">Long Reads</label>
+                    </span> 
+                </li>
+                <li>
+                    <span>
+                        <input type="checkbox" name="recent" id="recent-label"> 
+                        <label for="recent-label">Recent</label>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <input type="checkbox" name="data_modeling" id="data-modeling-label">
+                        <label for="data-modeling-label">Data Modeling</label>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <input type="checkbox" name="elasticSearch" id="elasticsearch-label"> 
+                        <label for="elasticsearch-label">ElasticSearch</label>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <input type="checkbox" name="serialization" id="serialization-label">
+                        <label for="serialization-label">Serialization</label>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <input type="checkbox" name="rust" id="rust-label">
+                        <label for="rust-label">Rust</label>
+                    </span>
+                </li>
+            </ul>
+        </aside>
+        
+        <!-- main center content -->
+        <section class="main-links">
+
+            <!-- Start of backend -->
+            <ul>
+                <!-- This is where you modify the code to do what you want -->
+                <!-- keep the class names and preferably the html tags but they need modifying -->
+                {% for link_name, link_url in  home_page_links.items() %}
+
+                 <li>
+                        <p class="read-length">2 minute read</p>
+
+                        <!-- I have done something wrong here, i have forgotten some flask -->
+                         <!-- i have 2 links with the same name -->
+                         <!-- one should only be the name and the other a link/url -->
+                        <p class="read"><a href="{{ link_url }}">{{ link_name }}</a></p>
+                        <p class="read"><a href="{{ link_url }}">{{ link_name }}</a></p>
+                 </li>   
+
+                {% endfor %}
+            </ul>
+            <!-- end of backend -->
+
+        </section>
+    </main>
+    {% endblock content %}
